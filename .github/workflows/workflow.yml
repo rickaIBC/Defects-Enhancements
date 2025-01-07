@@ -14,12 +14,12 @@ jobs:
       - name: Generate Directory Listings
         uses: jayanta525/github-pages-directory-listing@v4.0.0
         with:
-          FOLDER: Defects-Enhancements      #directory to generate index
+          FOLDER: Enhancements      #directory to generate index
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'Defects-Enhancements'      # upload generated folder
+          path: 'Enhancements'      # upload generated folder
   
   deploy:
     needs: pages-directory-listing
