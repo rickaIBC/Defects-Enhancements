@@ -16,11 +16,6 @@ jobs:
         with:
           FOLDER: Enhancements      #directory to generate index
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: 'Enhancements'      # upload generated folder
-  
   deploy:
     needs: pages-directory-listing
     permissions:
