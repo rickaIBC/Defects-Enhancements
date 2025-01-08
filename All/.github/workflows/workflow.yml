@@ -19,7 +19,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: All      # upload generated folder
+          path: All      # upload generated folder All
   deploy:
     needs: pages-directory-listing
     permissions:
