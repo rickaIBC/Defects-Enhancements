@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" rel="stylesheet">
+ 
+    <script  src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script  src=https://cdn.datatables.net/2.2.1/js/dataTables.js></script>
+    <script  src="https://cdn.datatables.net/2.2.1/js/dataTables.bootstrap5.js"></script>
+    <script  src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.js"></script>
+    <script  src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.dataTables.js"></script>
+ 
+    <meta charset=utf-8 />
+    <title>Screen/ReportCompare</title>
+  </head>
+  <body>
+    <div class="container">
+      <table id="example" border="1" class="table table-striped " style="width:100%">
+  <thead>
+    <tr style="text-align: right;" style="width:100%">
+      <th></th>
+      <th>Screen</th>
+      <th>pick_certifier.jam.asc.bak</th>
+      <th>pick_certifier.jam.asc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>JPL Lines</td>
+      <td>474</td>
+      <td>477</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Num Fields</td>
+      <td>150</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>New Fields</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NumOcc</td>
+      <td>- FONT-NAME=JAM Courier\n- FONT-SIZE=8\n</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>alt_empname</td>
+      <td>- FONT-NAME=Prolifics Courier\n- END-COLUMN END-LINE FONT-NAME FONT-STYLE H-SCROLLBAR HALIGN HEIGHT INIT-TEXT\\n</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>err_img</td>
+      <td>- EXTENDED (#C70000) B_SCHEME \n- FONT-NAME=Times New Roman\n- FONT-SIZE=10\n</td>
+      <td>+ SCHEME B_SCHEME\n</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>err_msg_dl</td>
+      <td>- EXTENDED (#C70000) B_SCHEME \n- FONT-NAME=Times New Roman\n- FONT-SIZE=10\n</td>
+      <td>+ SCHEME B_SCHEME\n</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>menu_title</td>
+      <td>- FONT-NAME=Arial Narrow\n</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>office_dl</td>
+      <td>- FONT-NAME=Prolifics Courier\n</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    <input type="hidden" id="jpllink" name="jpllink" value="pick_certifier.jam.asc.jpl.html">
+
+  </body>
+
+  <script>
+  var table = $('#example').DataTable({
+    layout: {
+      topStart: {
+        buttons: [
+            {
+                text: function (e, dt, node, config) {
+                        var hiddenUrl = document.getElementById('jpllink').value;
+                        return hiddenUrl === "" ? 'No JPL Differences' : 'JPL Link';
+                    },
+                action: function (e, dt, node, config) {
+                    var hiddenUrl = document.getElementById('jpllink').value;
+                    if (hiddenUrl === "")
+                      alert("There are no JPL Differences") 
+                    else
+                      window.open(hiddenUrl, '_blank');
+                }
+            }
+        ]
+      }
+    },
+    columns: [
+        null,
+        null,
+        {
+            "render": function(data, type, row){
+                return data.split("\\n").join("<br/>");
+            }
+        },
+        {
+            "render": function(data, type, row){
+                return data.split("\\n").join("<br/>");
+            }
+        }
+    ]
+});
+
+
+    table.on('click', 'tbody tr', function () {
+        let data = table.row(this).data();
+     
+        alert('You clicked on ' + data[0] + "'s row");
+    });</script>
+</html>

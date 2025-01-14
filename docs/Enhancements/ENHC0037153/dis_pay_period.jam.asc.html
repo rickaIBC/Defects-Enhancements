@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" rel="stylesheet">
+ 
+    <script  src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script  src=https://cdn.datatables.net/2.2.1/js/dataTables.js></script>
+    <script  src="https://cdn.datatables.net/2.2.1/js/dataTables.bootstrap5.js"></script>
+    <script  src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.js"></script>
+    <script  src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.dataTables.js"></script>
+ 
+    <meta charset=utf-8 />
+    <title>Screen/ReportCompare</title>
+  </head>
+  <body>
+    <div class="container">
+      <table id="example" border="1" class="table table-striped " style="width:100%">
+  <thead>
+    <tr style="text-align: right;" style="width:100%">
+      <th></th>
+      <th>Screen</th>
+      <th>dis_pay_period.jam.asc.bak</th>
+      <th>dis_pay_period.jam.asc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>JPL Lines</td>
+      <td>236</td>
+      <td>239</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Num Fields</td>
+      <td>27</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>New Fields</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NumOcc</td>
+      <td>- LINE=2 COLUMN=64\n- FONT-NAME=JAM Courier\n- FONT-SIZE=8\n</td>
+      <td>+ LINE=2 COLUMN=63\n</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>bgcolor2</td>
+      <td>- LINE=11 COLUMN=51\n</td>
+      <td>+ LINE=11 COLUMN=50\n</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>count_star</td>
+      <td>- LINE=12 COLUMN=37\n</td>
+      <td>+ LINE=12 COLUMN=36\n</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>err_img</td>
+      <td>- EXTENDED (#C70000) B_SCHEME \n- FONT-NAME=Times New Roman\n- FONT-SIZE=10\n- FONT-STYLE=BOLD\n</td>
+      <td>+ SCHEME B_SCHEME \n</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>err_msg_dl</td>
+      <td>- EXTENDED (#C70000) B_SCHEME \n- FONT-NAME=Times New Roman\n- FONT-SIZE=10\n- FONT-STYLE=BOLD\n</td>
+      <td>+ SCHEME B_SCHEME \n</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>form_error_counter</td>
+      <td>- LINE=6 COLUMN=68\n</td>
+      <td>+ LINE=6 COLUMN=67\n</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>form_error_row_color</td>
+      <td>- LINE=7 COLUMN=68\n</td>
+      <td>+ LINE=7 COLUMN=67\n</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>ft_label</td>
+      <td>- LINE=11 COLUMN=47\n</td>
+      <td>+ LINE=11 COLUMN=46\n</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>ft_symbol</td>
+      <td>- LINE=9 COLUMN=47\n</td>
+      <td>+ LINE=9 COLUMN=46\n</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>javascript</td>
+      <td>- LINE=9 COLUMN=51\n</td>
+      <td>+ LINE=9 COLUMN=50\n</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>pp_grid</td>
+      <td>- PI(save-length)=44\n</td>
+      <td>+ PI(save-length)=42\n</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>resizedWindow</td>
+      <td>- LINE=2 COLUMN=72\n</td>
+      <td>+ LINE=2 COLUMN=71\n</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>summend</td>
+      <td>- SCHEME B_HILIGHT B_WHITE \n- FONT-STYLE=BOLD\n- JAM-INHERIT-PROPS=ALL EXCEPT ARRAY-SIZE BK-ATTRIBS CIRCULAR COLUMN\\n- DATA-LENGTH DATE-TIME END-COLUMN END-LINE FONT-STYLE HALIGN HEIGHT LABEL\\n- LENGTH LINE NUMOCCS SCROLL SCROLL-INC SIZE-TO-FIT V-SCROLLBAR VALIGN\\n- WIDGET-TYPE WIDTH\n- USRDATETIME=24-HOUR %0m/%0d/%4y\n- \n</td>
+      <td>+ MAX-LENGTH=20\n+ SCHEME B_SCHEME \n+ JAM-INHERIT-PROPS=ALL EXCEPT ARRAY-SIZE BK-ATTRIBS CIRCULAR COLUMN LENGTH\\n+ LINE NUMOCCS SCROLL SCROLL-INC SIZE-TO-FIT V-SCROLLBAR VALIGN WIDGET-TYPE\\n+ WIDTH\n+ USRDATETIME=24-HOUR %0f\n</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>summpp</td>
+      <td>- SCHEME B_HILIGHT B_WHITE \n- FONT-STYLE=BOLD\n- JAM-INHERIT-PROPS=ALL EXCEPT ARRAY-SIZE BK-ATTRIBS CIRCULAR COLUMN\\n- DATA-LENGTH END-COLUMN END-LINE FONT-STYLE HALIGN HEIGHT JUSTIFICATION LABEL\\n- LENGTH LINE NUMOCCS SCROLL SCROLL-INC SIZE-TO-FIT V-SCROLLBAR VALIGN\\n- WIDGET-TYPE WIDTH\n- RIGHT-JUSTIFIED\n- \n</td>
+      <td>+ MAX-LENGTH=39\n+ SCHEME B_SCHEME \n+ JAM-INHERIT-PROPS=ALL EXCEPT ARRAY-SIZE BK-ATTRIBS CIRCULAR COLUMN LENGTH\\n+ LINE NUMOCCS SCROLL SCROLL-INC SIZE-TO-FIT V-SCROLLBAR VALIGN WIDGET-TYPE\\n+ WIDTH\n</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>summstart</td>
+      <td>- SCHEME B_HILIGHT B_WHITE \n- FONT-STYLE=BOLD\n- JAM-INHERIT-PROPS=ALL EXCEPT ARRAY-SIZE BK-ATTRIBS CIRCULAR COLUMN\\n- DATA-LENGTH DATE-TIME END-COLUMN END-LINE FONT-STYLE HALIGN HEIGHT LABEL\\n- LENGTH LINE NUMOCCS SCROLL SCROLL-INC SIZE-TO-FIT V-SCROLLBAR VALIGN\\n- WIDGET-TYPE WIDTH\n- USRDATETIME=24-HOUR %0m/%0d/%4y\n- \n</td>
+      <td>+ MAX-LENGTH=20\n+ SCHEME B_SCHEME \n+ JAM-INHERIT-PROPS=ALL EXCEPT ARRAY-SIZE BK-ATTRIBS CIRCULAR COLUMN LENGTH\\n+ LINE NUMOCCS SCROLL SCROLL-INC SIZE-TO-FIT V-SCROLLBAR VALIGN WIDGET-TYPE\\n+ WIDTH\n+ USRDATETIME=24-HOUR %0f\n</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>summyear</td>
+      <td>- LENGTH=6 ARRAY-SIZE=6 VERT-DISTANCE=1\n- SCHEME B_HILIGHT B_WHITE \n- FONT-STYLE=BOLD\n- JAM-INHERIT-PROPS=ALL EXCEPT ARRAY-SIZE BK-ATTRIBS CIRCULAR COLUMN\\n- DATA-LENGTH END-COLUMN END-LINE FONT-STYLE HALIGN HEIGHT HIDDEN LABEL LENGTH\\n- LINE NUMOCCS SCROLL SCROLL-INC SIZE-TO-FIT V-SCROLLBAR VALIGN WIDGET-TYPE\\n- WIDTH\n- \n</td>
+      <td>+ LENGTH=37 ARRAY-SIZE=6 VERT-DISTANCE=1\n+ MAX-LENGTH=39\n+ SCHEME B_SCHEME \n+ JAM-INHERIT-PROPS=ALL EXCEPT ARRAY-SIZE BK-ATTRIBS CIRCULAR COLUMN LINE\\n+ NUMOCCS SCROLL SCROLL-INC SIZE-TO-FIT V-SCROLLBAR VALIGN WIDGET-TYPE WIDTH\n</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>web_err_msg</td>
+      <td>- LINE=2 COLUMN=44\n- #    (2,46 2,48 2,50 2,52)\n</td>
+      <td>+ LINE=2 COLUMN=43\n+ #    (2,45 2,47 2,49 2,51)\n</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    <input type="hidden" id="jpllink" name="jpllink" value="dis_pay_period.jam.asc.jpl.html">
+
+  </body>
+
+  <script>
+  var table = $('#example').DataTable({
+    layout: {
+      topStart: {
+        buttons: [
+            {
+                text: function (e, dt, node, config) {
+                        var hiddenUrl = document.getElementById('jpllink').value;
+                        return hiddenUrl === "" ? 'No JPL Differences' : 'JPL Link';
+                    },
+                action: function (e, dt, node, config) {
+                    var hiddenUrl = document.getElementById('jpllink').value;
+                    if (hiddenUrl === "")
+                      alert("There are no JPL Differences") 
+                    else
+                      window.open(hiddenUrl, '_blank');
+                }
+            }
+        ]
+      }
+    },
+    columns: [
+        null,
+        null,
+        {
+            "render": function(data, type, row){
+                return data.split("\\n").join("<br/>");
+            }
+        },
+        {
+            "render": function(data, type, row){
+                return data.split("\\n").join("<br/>");
+            }
+        }
+    ]
+});
+
+
+    table.on('click', 'tbody tr', function () {
+        let data = table.row(this).data();
+     
+        alert('You clicked on ' + data[0] + "'s row");
+    });</script>
+</html>
