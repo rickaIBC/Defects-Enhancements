@@ -25,6 +25,10 @@ jobs:
           name: github-pages
           path: docs      # upload generated folder All
 
+      - name: Check for symlinks and hard links
+        run: find docs -type l -or -type f -links +1
+
+
   deploy:
     needs: pages-directory-listing
     permissions:
