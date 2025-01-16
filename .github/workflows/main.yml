@@ -22,7 +22,7 @@ jobs:
       - name: Upload GitHub Pages artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages
+          name: docs-pages
           path: docs      # upload generated folder All
 
       - name: Check for symlinks and hard links
@@ -37,7 +37,7 @@ jobs:
 
     # Deploy to the github-pages environment
     environment:
-      name: github-pages
+      name: docs-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     # Specify runner + deployment step
