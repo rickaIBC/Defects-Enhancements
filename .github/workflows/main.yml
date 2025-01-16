@@ -19,17 +19,3 @@ jobs:
       - name: List files in the docs directory
         run: ls -al docs  # Optional step to inspect the docs folder
 
-  # Deployment job
-  deploy:
-    permissions:
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: pages-directory-listing
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
