@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" rel="stylesheet">
+ 
+    <script  src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script  src=https://cdn.datatables.net/2.2.1/js/dataTables.js></script>
+    <script  src="https://cdn.datatables.net/2.2.1/js/dataTables.bootstrap5.js"></script>
+    <script  src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.js"></script>
+    <script  src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.dataTables.js"></script>
+ 
+    <meta charset=utf-8 />
+    <title>Screen/ReportCompare</title>
+  </head>
+  <body>
+    <div class="container">
+      <table id="example" border="1" class="table table-striped " style="width:100%">
+  <thead>
+    <tr style="text-align: right;" style="width:100%">
+      <th></th>
+      <th>Screen</th>
+      <th>rpt_role_assignments.jam.asc1</th>
+      <th>rpt_role_assignments.jam.asc2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>JPL Lines</td>
+      <td>185</td>
+      <td>177</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Num Fields</td>
+      <td>177</td>
+      <td>177</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Unique Fields</td>
+      <td>delete_org_dl</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>__internalScreen__</td>
+      <td>- LINES=49 COLUMNS=148 BACKGROUND=B_SCHEME\n</td>
+      <td>+ LINES=49 COLUMNS=141 BACKGROUND=B_SCHEME\n</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>admid</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>admin_roles</td>
+      <td></td>
+      <td>+ SELECTED-OCCUR=1\n</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>bgcolor</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>bgcolor2</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>bgimage</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>cb_include_alternates</td>
+      <td>- SUFFIX-MARKUP=&lt;label for="inclalts"&gt;Include Alternates (Admin roles do not\\n- have alternates)&lt;/label&gt;\n- \n- WEB(attributes)=id="inclalts"\n- \n</td>
+      <td>+ FONT-STYLE=BOLD\n+ \n+ OCCUR1=Include Alternates (Admin roles do not have alternates)\n</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>continue_proc</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>count_star</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>db_array</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>dtg1_hdr</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>dtg2_hdr</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>emporgcode</td>
+      <td>- WEB(attributes)=id="emporgcode" placeholder="Organization Code"\n</td>
+      <td>+ WEB(attributes)= id="emporgcode" TITLE="Organization Code"\n</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>err_img</td>
+      <td></td>
+      <td>+ FONT-NAME=Times New Roman\n+ FONT-SIZE=10\n+ FONT-STYLE=BOLD\n</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>err_msg_dl</td>
+      <td></td>
+      <td>+ FONT-NAME=Times New Roman\n+ FONT-SIZE=10\n+ FONT-STYLE=BOLD\n</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>err_msg_idx_508</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_MAGENTA \n</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>file_dtstamp</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>ft_label</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>ft_symbol</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>javascript</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>l_bureau</td>
+      <td></td>
+      <td>+ FONT-STYLE=BOLD\n</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>l_department</td>
+      <td></td>
+      <td>+ FONT-STYLE=BOLD\n</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>l_orgcode</td>
+      <td></td>
+      <td>+ FONT-STYLE=BOLD\n</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>l_roles</td>
+      <td></td>
+      <td>+ FONT-STYLE=BOLD\n</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>l_status</td>
+      <td></td>
+      <td>+ FONT-STYLE=BOLD\n</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>l_sub</td>
+      <td></td>
+      <td>+ FONT-STYLE=BOLD\n</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>menu_admid</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>menu_continue_proc</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>menu_empid</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>menu_empid_changed</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>menu_empid_tk</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>menu_help</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>menu_idx</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>menu_label</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>menu_link</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>menu_num_occurrences</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>menu_pp</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>menu_ppyear</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>menu_status</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>menu_title</td>
+      <td>- PI(save-length)=25\n</td>
+      <td>+ FONT-NAME=Arial Narrow\n+ FONT-STYLE=BOLD\n+ PI(save-length)=21\n</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>pdf_url</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>post_stmt</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>pre_stmt</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>screen_id</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>sql_stmt</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>status_1</td>
+      <td></td>
+      <td>+ FONT-STYLE=BOLD\n+ SELECTED-OCCUR=1\n</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>status_2</td>
+      <td></td>
+      <td>+ FONT-STYLE=BOLD\n</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>status_3</td>
+      <td>- SELECTED-OCCUR=1\n</td>
+      <td>+ FONT-STYLE=BOLD\n</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>tna_data</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>web_err_msg</td>
+      <td>- #  NUMBERS=157, 158, 159, 160, 161\n- #    (37,15 37,17 37,19 37,21)\n- SCHEME B_SCHEME \n</td>
+      <td>+ #  NUMBERS=156, 157, 158, 159, 160\n+ #    (37,14 37,16 37,18 37,20)\n+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>where_stmt</td>
+      <td>- SCHEME B_SCHEME \n</td>
+      <td>+ SCHEME B_HILIGHT B_GREEN \n</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    <input type="hidden" id="jpllink" name="jpllink" value="rpt_role_assignments.jam.asc2.jpl.html">
+
+  </body>
+
+  <script>
+  var table = $('#example').DataTable({
+    layout: {
+      topStart: {
+        buttons: [
+            {
+                text: function (e, dt, node, config) {
+                        var hiddenUrl = document.getElementById('jpllink').value;
+                        return hiddenUrl === "" ? 'No JPL Differences' : 'JPL Link';
+                    },
+                action: function (e, dt, node, config) {
+                    var hiddenUrl = document.getElementById('jpllink').value;
+                    if (hiddenUrl === "")
+                      alert("There are no JPL Differences") 
+                    else
+                      window.open(hiddenUrl, '_blank');
+                }
+            }
+        ]
+      }
+    },
+    columns: [
+        null,
+        null,
+        {
+            "render": function(data, type, row){
+                return data.split("\\n").join("<br/>");
+            }
+        },
+        {
+            "render": function(data, type, row){
+                return data.split("\\n").join("<br/>");
+            }
+        }
+    ]
+});
+
+
+    table.on('click', 'tbody tr', function () {
+        let data = table.row(this).data();
+     
+        alert('You clicked on ' + data[0] + "'s row");
+    });</script>
+</html>
