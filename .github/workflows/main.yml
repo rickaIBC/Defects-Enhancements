@@ -19,3 +19,23 @@ jobs:
       - name: List files in the docs directory
         run: ls -al docs  # Optional step to inspect the docs folder
 
+  deploy:
+    needs: pages-directory-listing
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: main    #checkout different branch
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
