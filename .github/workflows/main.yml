@@ -1,4 +1,3 @@
-
 name: directory-listing
 on: [push]
 
@@ -17,11 +16,15 @@ jobs:
         with:
           FOLDER: docs      #directory to generate index
 
+      - name: List files in the docs directory
+        run: ls -al docs
+
       - name: Upload GitHub Pages artifacts
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
           path: docs      # upload generated folder All
+
   deploy:
     needs: pages-directory-listing
     permissions:
@@ -36,6 +39,11 @@ jobs:
     # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
+      - name: Download GitHub Pages artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
