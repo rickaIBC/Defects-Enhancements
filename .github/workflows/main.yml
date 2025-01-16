@@ -17,9 +17,10 @@ jobs:
         with:
           FOLDER: docs      #directory to generate index
 
-      - name: Upload artifact
+      - name: Upload GitHub Pages artifacts
         uses: actions/upload-artifact@v4
         with:
+          name: github-pages
           path: docs      # upload generated folder All
   deploy:
     needs: pages-directory-listing
