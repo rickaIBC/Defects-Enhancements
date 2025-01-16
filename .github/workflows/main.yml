@@ -7,7 +7,7 @@ jobs:
     name: Directory Listings Index
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           ref: main    #checkout different branch
 
@@ -20,7 +20,7 @@ jobs:
         run: ls -al docs
 
       - name: Upload GitHub Pages artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: github-pages
           path: docs      # upload generated folder All
@@ -46,4 +46,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v3
