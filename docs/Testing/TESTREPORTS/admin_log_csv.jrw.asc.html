@@ -6,11 +6,13 @@
  
     <script  src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script  src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
-    <script  src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+    <script  src=https://cdn.datatables.net/2.2.1/js/dataTables.js></script>
+    <script  src="https://cdn.datatables.net/2.2.1/js/dataTables.bootstrap5.js"></script>
+    <script  src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.js"></script>
+    <script  src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.dataTables.js"></script>
  
-     <meta charset=utf-8 />
-    <title>DataTables - JS Bin</title>
+    <meta charset=utf-8 />
+    <title>Screen/ReportCompare</title>
   </head>
   <body>
     <div class="container">
@@ -38,90 +40,54 @@
     </tr>
     <tr>
       <th>2</th>
-      <td>JPL Text</td>
-      <td>- E1.empname, \                       A1.menuoption \\\n\n- from adminlog A1, employee E1 \                 where A1.adminid = E1.empid \\\n- :date_stmt1 \                        :date_stmt2 \\\n\n\n\n- :where_stmt1 \                        :where_stmt2 \\\n\n- :exclude_csc_nbc \                 order by dtstamp\n\n</td>
-      <td>\n+ E1.empname, \                       A1.menuoption, \\\n\n\n+ A1.operatorid, \                       A1.activerole, \\\n+ A1.alternateforid \                  from adminlog A1, employee E1 \\\n+ where A1.empid = E1.empid \                        :date_stmt1 \\\n\n+ :date_stmt2 \                        :where_stmt1 \\\n\n+ :where_stmt2 \                        :exclude_csc_nbc \\\n+ order by dtstamp</td>
-    </tr>
-    <tr>
-      <th>3</th>
       <td>REPORT Script</td>
       <td>Same</td>
       <td>Same</td>
     </tr>
     <tr>
+      <th>3</th>
+      <td>Unique Fields</td>
+      <td></td>
+      <td>Lalternateforid\nLActiverole\noperatorid\nactiverole\nLempname\nalternateforid</td>
+    </tr>
+    <tr>
       <th>4</th>
-      <td>Unique Field</td>
-      <td></td>
-      <td>LActiverole</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Unique Field</td>
-      <td></td>
-      <td>Lalternateforid</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Unique Field</td>
-      <td></td>
-      <td>Lempname</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Unique Field</td>
-      <td></td>
-      <td>activerole</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Unique Field</td>
-      <td></td>
-      <td>alternateforid</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Unique Field</td>
-      <td></td>
-      <td>operatorid</td>
-    </tr>
-    <tr>
-      <th>10</th>
       <td>LAdminid</td>
       <td>- LINE=2 COLUMN=12 LENGTH=8\n</td>
       <td>+ LINE=3 COLUMN=24 LENGTH=8\n</td>
     </tr>
     <tr>
-      <th>11</th>
+      <th>5</th>
       <td>LDtstamp</td>
       <td>- LINE=2 COLUMN=4 LENGTH=4\n</td>
       <td>+ LINE=3 COLUMN=4 LENGTH=4\n</td>
     </tr>
     <tr>
-      <th>12</th>
+      <th>6</th>
       <td>__internalScreen__</td>
       <td>- LINES=25 COLUMNS=254 BACKGROUND=B_SCHEME\n</td>
       <td>+ LINES=25 COLUMNS=210 BACKGROUND=B_SCHEME\n</td>
     </tr>
     <tr>
-      <th>13</th>
+      <th>7</th>
       <td>dtstamp</td>
       <td>- LENGTH=25 ARRAY-SIZE=1\n- PI(save-length)=25\n</td>
       <td>+ LENGTH=19 ARRAY-SIZE=1\n+ PI(save-length)=19\n</td>
     </tr>
     <tr>
-      <th>14</th>
+      <th>8</th>
       <td>empname</td>
       <td>- LINE=5 COLUMN=33\n- LENGTH=32 ARRAY-SIZE=1\n- JAM-INHERIT-PROPS=ALL EXCEPT ARRAY-SIZE COLUMN END-COLUMN END-LINE\\n- FONT-STYLE HEIGHT LABEL LINE VALIGN WIDGET-TYPE\n- PI(save-length)=32\n</td>
       <td>+ LINE=5 COLUMN=83\n+ LENGTH=21 ARRAY-SIZE=1\n+ JAM-INHERIT-PROPS=ALL EXCEPT ARRAY-SIZE COLUMN DATA-LENGTH END-COLUMN\\n+ END-LINE FONT-STYLE HEIGHT LABEL LENGTH LINE VALIGN WIDGET-TYPE WIDTH\n+ PI(save-length)=21\n</td>
     </tr>
     <tr>
-      <th>15</th>
+      <th>9</th>
       <td>menuoption</td>
       <td>- LINE=5 COLUMN=69\n- LENGTH=150 ARRAY-SIZE=1\n- END-LINE FONT-NAME FONT-SIZE FONT-STYLE HALIGN LENGTH LINE SCROLL SIZE-TO-FIT\\n- VALIGN WIDGET-TYPE WIDTH\n- PI(save-length)=150\n</td>
       <td>+ LINE=5 COLUMN=107\n+ LENGTH=103 ARRAY-SIZE=1\n+ END-LINE FONT-NAME FONT-SIZE FONT-STYLE HALIGN HEIGHT LENGTH LINE SCROLL\\n+ SIZE-TO-FIT VALIGN WIDGET-TYPE WIDTH\n+ PI(save-length)=103\n</td>
     </tr>
     <tr>
-      <th>16</th>
+      <th>10</th>
       <td>tna_data</td>
       <td>- LINE=17 COLUMN=3\n</td>
       <td>+ LINE=15 COLUMN=3\n</td>
@@ -129,10 +95,31 @@
   </tbody>
 </table>
     </div>
+    <input type="hidden" id="jpllink" name="jpllink" value="admin_log_csv.jrw.asc.jpl.html">
+
   </body>
 
   <script>
   var table = $('#example').DataTable({
+    layout: {
+      topStart: {
+        buttons: [
+            {
+                text: function (e, dt, node, config) {
+                        var hiddenUrl = document.getElementById('jpllink').value;
+                        return hiddenUrl === "" ? 'No JPL Differences' : 'JPL Link';
+                    },
+                action: function (e, dt, node, config) {
+                    var hiddenUrl = document.getElementById('jpllink').value;
+                    if (hiddenUrl === "")
+                      alert("There are no JPL Differences") 
+                    else
+                      window.open(hiddenUrl, '_blank');
+                }
+            }
+        ]
+      }
+    },
     columns: [
         null,
         null,

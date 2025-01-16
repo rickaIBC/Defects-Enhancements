@@ -6,11 +6,13 @@
  
     <script  src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script  src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
-    <script  src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+    <script  src=https://cdn.datatables.net/2.2.1/js/dataTables.js></script>
+    <script  src="https://cdn.datatables.net/2.2.1/js/dataTables.bootstrap5.js"></script>
+    <script  src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.js"></script>
+    <script  src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.dataTables.js"></script>
  
-     <meta charset=utf-8 />
-    <title>DataTables - JS Bin</title>
+    <meta charset=utf-8 />
+    <title>Screen/ReportCompare</title>
   </head>
   <body>
     <div class="container">
@@ -38,30 +40,24 @@
     </tr>
     <tr>
       <th>2</th>
-      <td>JPL Text</td>
-      <td>- NVL(SYSAUDIT_OPERATORID,'System') SYSAUDIT_OPERATORID, SYSAUDIT_ACTIVEROLE, SYSAUDIT_ALTERNATEFORID, \\\n\n- EMPID, EMPNAME, EMPSHIFTCODE, EMPTKCODE, EMPTKROLE, EMPCTROLE, EMPADROLE, EMPTKID, \\\n- EMPCERTID, EMPSTATUS, EMPTYPE, EMPSCHDL, EMPDUTYHRS, EMPALTSCHDL, EMPPREPRINTOPT, \\\n- EMPWORKWEEK, EMPUNITCODE, EMPSCHOPTION, LASTCNTR, LASTPSWDCHANGE, \\\n- EMPAGENCYCODE, EMPSTATECODE, EMPTOWNCODE, EMPBUREAUCODE, EMPSBUREAUCODE, EMPDEPTCODE, \\\n- EMPLEAVCAT, EMPPPSTART, EMPPPEND, \                EMPMAXUSELOSE, EMPOFFICEID, EMPEFFECTIVE, PP,\\n- EMPORGCODE, EMPPAYBASIS, EMPBUS, EMPCONTRACTSTART, \\\n- EMPTELEWORK, EMPPAYPLAN, EMPXH2ROLE, EMPXH3ROLE, EMPDUTYSTATION, EMPECI, EMPPAYGRADE, \\\n- EMPEMAIL, EMPLOGINALLOWED, EMPNTEDATEAPPT, EMPAGE, \\\n\n\n\n\n\n\n\n\n- EMPCONTRACTTYPE, EMPWORKSCHEDULE,EMPLASTELIGIBLE, \\\n\n- EMPDISABLEDVET, EMPFIRSTELIGIBLE, EMPFPPSSTATUS \           from SYSAUDIT_EMPLOYEE \\\n- where :where_stmt1 \                :where_stmt2 \\\n\n\n- :where_stmt3 \                :where_stmt4 \\\n\n- :exclude_csc_nbc1 \          order by EMPID, SYSAUDIT_SEQ desc\n\n\n</td>
-      <td>\n+ NVL(SYSAUDIT_OPERATORID,'System') SYSAUDIT_OPERATORID, SYSAUDIT_ACTIVEROLE, \\\n\n\n\n\n\n\n\n\n+ SYSAUDIT_ALTERNATEFORID, EMPID, EMPNAME, EMPSHIFTCODE, EMPTKCODE, EMPTKROLE, \\\n+ EMPCTROLE, EMPADROLE, EMPTKID, EMPCERTID, EMPSTATUS, EMPTYPE, EMPSCHDL, \\\n+ EMPDUTYHRS, EMPALTSCHDL, EMPPREPRINTOPT, EMPWORKWEEK, EMPUNITCODE, EMPSCHOPTION, \\\n+ LASTCNTR, LASTPSWDCHANGE, EMPAGENCYCODE, EMPSTATECODE, EMPTOWNCODE, EMPBUREAUCODE, \\\n+ EMPSBUREAUCODE, EMPDEPTCODE, EMPLEAVCAT, EMPPPSTART, EMPPPEND, EMPMAXUSELOSE, \\\n+ EMPOFFICEID, EMPEFFECTIVE, PP, PPYEAR, EMPLOYEE_DTG, EMPLOGINID, EMPORGCODE, \\\n+ EMPPAYBASIS, EMPBUS, EMPCONTRACTSTART, EMPTELEWORK, EMPPAYPLAN, EMPXH2ROLE, \\\n+ EMPXH3ROLE, EMPDUTYSTATION, EMPECI, EMPPAYGRADE, EMPEMAIL, EMPLOGINALLOWED, \\\n\n+ EMPNTEDATEAPPT, EMPAGE, EMPCONTRACTTYPE, EMPWORKSCHEDULE, EMPLASTELIGIBLE, \\\n\n\n+ EMPDISABLEDVET, EMPFIRSTELIGIBLE, s1.EMPFPPSSTATUS || ' - ' || r1.description as empfppsstatus \\\n+ from SYSAUDIT_EMPLOYEE s1, ref_fpps_status r1 \          where :where_stmt1 \\\n\n+ :where_stmt2 \                :where_stmt3 \\\n\n+ :where_stmt4 \                :exclude_csc_nbc1 \\\n+ and s1.empfppsstatus = r1.code (+) \          order by EMPID, SYSAUDIT_SEQ desc\n+ operator = "UPDATE%empstatus"</td>
-    </tr>
-    <tr>
-      <th>3</th>
       <td>REPORT Script</td>
       <td>Same</td>
       <td>Same</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>3</th>
       <td>New Fields</td>
       <td>None</td>
       <td>None</td>
     </tr>
     <tr>
-      <th>5</th>
+      <th>4</th>
       <td>__internalScreen__</td>
       <td>- Created report.\n</td>
       <td>+ option - Status updates.\n</td>
     </tr>
     <tr>
-      <th>6</th>
+      <th>5</th>
       <td>empfppsstatus</td>
       <td>- LINE=5 COLUMN=254\n- LENGTH=1 ARRAY-SIZE=1\n- JAM-INHERIT-PROPS=ALL EXCEPT COLUMN END-COLUMN END-LINE HALIGN LABEL LINE\\n- WIDGET-TYPE\n- PI(save-length)=1\n</td>
       <td>+ LINE=5 COLUMN=210\n+ LENGTH=45 ARRAY-SIZE=1\n+ JAM-INHERIT-PROPS=ALL EXCEPT COLUMN DATA-LENGTH END-COLUMN END-LINE HALIGN\\n+ LABEL LENGTH LINE SIZE-TO-FIT WIDGET-TYPE WIDTH\n+ PI(save-length)=45\n</td>
@@ -69,10 +65,31 @@
   </tbody>
 </table>
     </div>
+    <input type="hidden" id="jpllink" name="jpllink" value="user_audit_csv.jrw.asc.jpl.html">
+
   </body>
 
   <script>
   var table = $('#example').DataTable({
+    layout: {
+      topStart: {
+        buttons: [
+            {
+                text: function (e, dt, node, config) {
+                        var hiddenUrl = document.getElementById('jpllink').value;
+                        return hiddenUrl === "" ? 'No JPL Differences' : 'JPL Link';
+                    },
+                action: function (e, dt, node, config) {
+                    var hiddenUrl = document.getElementById('jpllink').value;
+                    if (hiddenUrl === "")
+                      alert("There are no JPL Differences") 
+                    else
+                      window.open(hiddenUrl, '_blank');
+                }
+            }
+        ]
+      }
+    },
     columns: [
         null,
         null,
